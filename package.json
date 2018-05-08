@@ -1,0 +1,12 @@
+{
+  "author": "Laurentiu Molnar",
+  "name": "spotify-visualiser",
+  "description": "A Spotify song visualiser made using WebGL and WebAudio API",
+  "version": "0.0.2",
+  "dependencies": {
+    "atob": "^2.1.1",
+    "btoa": "^1.2.1",
+    "express": "~4.16.0",
+    "pug": "^2.0.3",
+  }
+}
