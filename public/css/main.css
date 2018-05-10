@@ -8,4 +8,50 @@ body{
 
 body {
     font-family: "Roboto", sans-serif;
+    display: flex;
+    flex-direction: row;
+}
+
+#wrapper {
+    width: 600px;
+    /* background-color: #1ed760; */
+    padding-left: 10px;
+}
+
+#wrapper h1 {
+    color: #1ed760;
+}
+
+.track{
+    display: flex;
+    flex-direction: row;
+    padding: 3px 0px;
+}
+
+.track img {
+    width: 64px;
+    height: 64px;
+}
+
+.track audio{
+    display: block;
+    height: 24px;
+}
+
+.track h4 {
+    margin: 0px;
+}
+
+.track .wrapper{
+    margin-left: 10px;
+}
+
+input[type=text] {
+    padding: 5px 10px;
+    border-radius: 10px;
+    /* margin-left: 20px; */
+}
+
+input[type=text]:focus{
+    border: 1px solid #1ed760;
 }

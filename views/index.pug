@@ -2,14 +2,15 @@ doctype html
 html
     head
         title Spotify Visualiser
-        link(href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel=stylesheet)
-        link(rel=stylesheet href="/public/css/main.css")
+        link(href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet")
+        link(rel="stylesheet" href="http://localhost:3000/public/css/main.css")
 
     body
         #wrapper
-            main.track-list Here go the tracks
+            h1 Spotify Visualiser
             input(type='hidden' name='token' value=token)
             input(type='text' name='q' placeholder="Search tracks")
             input(type='submit' value='Get Tracks')
+        canvas If you see this, your browser is old and it sucks
 
         script(src="/public/scripts/app.js")

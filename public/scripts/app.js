@@ -2,6 +2,12 @@ let btn = document.querySelector('input[type=submit]');
 let token = document.querySelector('input[type=hidden]').getAttribute('value');
 let query = document.querySelector('input[type=text]').value;
 
+const canvas = document.querySelector('canvas');
+
+let audioPlayed = (audio) => {
+    console.log(audio);
+};
+
 btn.addEventListener('click', (evt) => {
     evt.preventDefault();
 
@@ -27,17 +33,23 @@ btn.addEventListener('click', (evt) => {
                     let audio = document.createElement('audio');
                     audio.src = track.preview_url;
                     audio.controls = true;
-                    el.innerText = track.name;
+                    audio.onplay = "audioPlayed";
+                    let name = document.createElement('h4');
+                    name.innerText = (track.name.length > 65) ? track.name.slice(0, 60) + "..." : track.name;
                     let artist = document.createElement('span');
                     artist.setAttribute('class','track-artist');
-                    artist.innerText = track.artists[0].name;
+                    artist.innerText = "by " + track.artists[0].name;
                     let img = document.createElement('img');
                     img.src = track.image.url;
                     img.setAttribute('class','track-image');
-                    el.appendChild(audio);
-                    el.appendChild(artist);
+                    let wrapper = document.createElement('div');
+                    wrapper.setAttribute('class', 'wrapper');
+                    wrapper.appendChild(name);
+                    wrapper.appendChild(artist);
+                    wrapper.appendChild(audio);
                     el.appendChild(img);
-                    document.body.appendChild(el);
+                    el.appendChild(wrapper);
+                    document.querySelector('#wrapper').appendChild(el);
                 });
                 console.log(elems);
             })
@@ -45,5 +57,7 @@ btn.addEventListener('click', (evt) => {
     })
     .catch(err => console.log("Error", err))
     ;
+
+   // document.querySelectorAll('audio').every((v,i,a) => a[i].addEventListener('play', (evt => console.log(evt.target))));
 
 });
