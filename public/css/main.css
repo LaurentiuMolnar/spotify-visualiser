@@ -38,6 +38,8 @@ body {
     height: 24px;
 }
 
+#stats {display: none;}
+
 .track h4 {
     margin: 0px;
 }
